@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUAP STOCK - Saída</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">FLUAP STOCK</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="estoque.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Estoque</span>
+                </a></li>
+                <li><a href="entrada.html" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    <span>Entrada</span>
+                </a></li>
+                <li><a href="saida.html" class="nav-item active">
+                    <span class="nav-icon">➖</span>
+                    <span>Saída</span>
+                </a></li>
+                <li><a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Inventário</span>
+                </a></li>
+                <li><a href="movimentacoes.html" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    <span>Movimentações</span>
+                </a></li>
+                <li><a href="alertas.html" class="nav-item">
+                    <span class="nav-icon">⚠️</span>
+                    <span>Alertas</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h2>Saída de Estoque</h2>
+                <div class="header-actions">
+                    <span class="user-info">Usuário: Admin</span>
+                </div>
+            </header>
+
+            <!-- Buscar Prescrição -->
+            <section class="section">
+                <h3 class="section-title">Buscar Prescrição</h3>
+                <div class="form-group">
+                    <label class="form-label">Código da Prescrição ou QR Code</label>
+                    <div style="display: flex; gap: 12px;">
+                        <input type="text" class="form-input" placeholder="Digite o código ou escaneie o QR Code" id="prescricaoInput">
+                        <button class="btn btn-secondary">
+                            <span>📷</span>
+                            Escanear QR Code
+                        </button>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="buscarPrescricao()">
+                        <span>🔍</span>
+                        Buscar Prescrição
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card da Prescrição -->
+            <section class="section" id="prescricaoCard" style="display: none;">
+                <div class="prescription-card">
+                    <div class="prescription-header">
+                        <h3 class="prescription-title">Prescrição #PR-2025-001234</h3>
+                        <span class="badge badge-info">Ativa</span>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <strong>Paciente:</strong> João Silva<br>
+                        <strong>Médico:</strong> Dr. Maria Santos<br>
+                        <strong>Data:</strong> 20/01/2025
+                    </div>
+                    <ul class="prescription-items">
+                        <li class="prescription-item">
+                            <strong>Paracetamol 500mg</strong> - 2 comprimidos, 3x ao dia
+                        </li>
+                        <li class="prescription-item">
+                            <strong>Amoxicilina 500mg</strong> - 1 comprimido, 2x ao dia
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seleção de Lotes (FEFO) -->
+            <section class="section" id="lotesSection" style="display: none;">
+                <h3 class="section-title">Seleção de Lote Sugerido (FEFO)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: var(--spacing);">
+                    Os lotes são sugeridos automaticamente seguindo a política FEFO (First Expired, First Out).
+                </p>
+                
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Lote Sugerido</th>
+                                <th>Quantidade Disponível</th>
+                                <th>Validade</th>
+                                <th>Dias Restantes</th>
+                                <th>Quantidade a Retirar</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: var(--primary-light);">
+                                <td><strong>Paracetamol 500mg</strong></td>
+                                <td><strong>#12345</strong> <span class="badge badge-info">Sugerido</span></td>
+                                <td>25</td>
+                                <td>20/01/2025</td>
+                                <td style="color: var(--warning-color); font-weight: 600;">20</td>
+                                <td>
+                                    <input type="number" class="form-input" value="2" min="1" max="25" style="width: 80px;">
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary" style="padding: 6px 12px; font-size: 14px;">Confirmar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Amoxicilina 500mg</strong></td>
+                                <td><strong>#12345</strong> <span class="badge badge-info">Sugerido</span></td>
+                                <td>25</td>
+                                <td>20/01/2025</td>
+                                <td style="color: var(--warning-color); font-weight: 600;">20</td>
+                                <td>
+                                    <input type="number" class="form-input" value="1" min="1" max="25" style="width: 80px;">
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary" style="padding: 6px 12px; font-size: 14px;">Confirmar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Registrar Responsável -->
+            <section class="section" id="responsavelSection" style="display: none;">
+                <h3 class="section-title">Registrar Responsável</h3>
+                <form id="saidaForm">
+                    <div class="form-group">
+                        <label class="form-label">Responsável pela Retirada *</label>
+                        <input type="text" class="form-input" placeholder="Nome do responsável" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">CPF/Registro Profissional</label>
+                        <input type="text" class="form-input" placeholder="CPF ou número de registro">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Observações</label>
+                        <textarea class="form-textarea" placeholder="Observações sobre a retirada..."></textarea>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">
+                            <span>✅</span>
+                            Confirmar Saída
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelarSaida()">
+                            <span>❌</span>
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function buscarPrescricao() {
+            const input = document.getElementById('prescricaoInput').value;
+            if (input) {
+                document.getElementById('prescricaoCard').style.display = 'block';
+                document.getElementById('lotesSection').style.display = 'block';
+                document.getElementById('responsavelSection').style.display = 'block';
+            }
+        }
+
+        function cancelarSaida() {
+            document.getElementById('prescricaoCard').style.display = 'none';
+            document.getElementById('lotesSection').style.display = 'none';
+            document.getElementById('responsavelSection').style.display = 'none';
+            document.getElementById('prescricaoInput').value = '';
+        }
+    </script>
+</body>
+</html>
+

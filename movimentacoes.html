@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUAP STOCK - Movimentações</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">FLUAP STOCK</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="estoque.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Estoque</span>
+                </a></li>
+                <li><a href="entrada.html" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    <span>Entrada</span>
+                </a></li>
+                <li><a href="saida.html" class="nav-item">
+                    <span class="nav-icon">➖</span>
+                    <span>Saída</span>
+                </a></li>
+                <li><a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Inventário</span>
+                </a></li>
+                <li><a href="movimentacoes.html" class="nav-item active">
+                    <span class="nav-icon">📋</span>
+                    <span>Movimentações</span>
+                </a></li>
+                <li><a href="alertas.html" class="nav-item">
+                    <span class="nav-icon">⚠️</span>
+                    <span>Alertas</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h2>Movimentações</h2>
+                <div class="header-actions">
+                    <span class="user-info">Usuário: Admin</span>
+                </div>
+            </header>
+
+            <!-- Filtros -->
+            <section class="section">
+                <h3 class="section-title">Filtros</h3>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label class="form-label">Tipo de Movimentação</label>
+                        <select class="form-select">
+                            <option value="">Todos</option>
+                            <option value="entrada">Entrada</option>
+                            <option value="saida">Saída</option>
+                            <option value="ajuste">Ajuste</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="form-label">Usuário</label>
+                        <select class="form-select">
+                            <option value="">Todos</option>
+                            <option value="1">João Silva</option>
+                            <option value="2">Maria Santos</option>
+                            <option value="3">Pedro Costa</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="form-label">Período</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="filter-group">
+                        <label class="form-label">Até</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="filter-group">
+                        <label class="form-label">&nbsp;</label>
+                        <button class="btn btn-primary" style="width: 100%;">Filtrar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Completa -->
+            <section class="section">
+                <h3 class="section-title">Timeline Completa</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-title">
+                                <span class="movement-type entrada">Entrada</span>
+                                Paracetamol 500mg - Lote #11111
+                            </span>
+                            <span class="timeline-date">20/01/2025 14:30</span>
+                        </div>
+                        <div class="timeline-content">
+                            <strong>Quantidade:</strong> +50 unidades<br>
+                            <strong>Validade:</strong> 15/06/2025<br>
+                            <strong>Nota Fiscal:</strong> NF-2025-001234<br>
+                            <strong>Usuário:</strong> João Silva
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-title">
+                                <span class="movement-type saida">Saída</span>
+                                Amoxicilina 500mg - Lote #12345
+                            </span>
+                            <span class="timeline-date">20/01/2025 11:15</span>
+                        </div>
+                        <div class="timeline-content">
+                            <strong>Quantidade:</strong> -10 unidades<br>
+                            <strong>Prescrição:</strong> #PR-2025-001234<br>
+                            <strong>Paciente:</strong> João Silva<br>
+                            <strong>Responsável:</strong> Maria Santos<br>
+                            <strong>Usuário:</strong> Maria Santos
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-title">
+                                <span class="movement-type ajuste">Ajuste</span>
+                                Ibuprofeno 400mg - Lote #67890
+                            </span>
+                            <span class="timeline-date">19/01/2025 16:45</span>
+                        </div>
+                        <div class="timeline-content">
+                            <strong>Quantidade Anterior:</strong> 52 unidades<br>
+                            <strong>Quantidade Nova:</strong> 50 unidades<br>
+                            <strong>Motivo:</strong> Divergência no inventário<br>
+                            <strong>Usuário:</strong> Pedro Costa
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-title">
+                                <span class="movement-type entrada">Entrada</span>
+                                Amoxicilina 500mg - Lote #12345
+                            </span>
+                            <span class="timeline-date">19/01/2025 10:15</span>
+                        </div>
+                        <div class="timeline-content">
+                            <strong>Quantidade:</strong> +100 unidades<br>
+                            <strong>Validade:</strong> 20/07/2025<br>
+                            <strong>Nota Fiscal:</strong> NF-2025-001200<br>
+                            <strong>Usuário:</strong> João Silva
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-title">
+                                <span class="movement-type saida">Saída</span>
+                                Paracetamol 500mg - Lote #12345
+                            </span>
+                            <span class="timeline-date">18/01/2025 15:30</span>
+                        </div>
+                        <div class="timeline-content">
+                            <strong>Quantidade:</strong> -5 unidades<br>
+                            <strong>Prescrição:</strong> #PR-2025-001200<br>
+                            <strong>Paciente:</strong> Ana Paula<br>
+                            <strong>Responsável:</strong> João Silva<br>
+                            <strong>Usuário:</strong> João Silva
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <span class="timeline-title">
+                                <span class="movement-type entrada">Entrada</span>
+                                Ibuprofeno 400mg - Lote #67890
+                            </span>
+                            <span class="timeline-date">18/01/2025 16:45</span>
+                        </div>
+                        <div class="timeline-content">
+                            <strong>Quantidade:</strong> +75 unidades<br>
+                            <strong>Validade:</strong> 15/08/2025<br>
+                            <strong>Nota Fiscal:</strong> NF-2025-001180<br>
+                            <strong>Usuário:</strong> Maria Santos
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

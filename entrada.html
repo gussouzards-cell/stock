@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUAP STOCK - Entrada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">FLUAP STOCK</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="estoque.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Estoque</span>
+                </a></li>
+                <li><a href="entrada.html" class="nav-item active">
+                    <span class="nav-icon">➕</span>
+                    <span>Entrada</span>
+                </a></li>
+                <li><a href="saida.html" class="nav-item">
+                    <span class="nav-icon">➖</span>
+                    <span>Saída</span>
+                </a></li>
+                <li><a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Inventário</span>
+                </a></li>
+                <li><a href="movimentacoes.html" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    <span>Movimentações</span>
+                </a></li>
+                <li><a href="alertas.html" class="nav-item">
+                    <span class="nav-icon">⚠️</span>
+                    <span>Alertas</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h2>Entrada de Estoque</h2>
+                <div class="header-actions">
+                    <span class="user-info">Usuário: Admin</span>
+                </div>
+            </header>
+
+            <!-- Formulário de Entrada -->
+            <section class="section">
+                <h3 class="section-title">Cadastro de Lote</h3>
+                <form id="entradaForm">
+                    <div class="form-group">
+                        <label class="form-label">Produto *</label>
+                        <select class="form-select" required>
+                            <option value="">Selecione um produto</option>
+                            <option value="1">Paracetamol 500mg</option>
+                            <option value="2">Amoxicilina 500mg</option>
+                            <option value="3">Ibuprofeno 400mg</option>
+                            <option value="4">Dipirona 1g</option>
+                            <option value="5">Omeprazol 20mg</option>
+                            <option value="6">Losartana 50mg</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Número do Lote *</label>
+                        <input type="text" class="form-input" placeholder="Ex: #12345" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Quantidade *</label>
+                        <input type="number" class="form-input" placeholder="Ex: 100" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Data de Validade *</label>
+                        <input type="date" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Número da Nota Fiscal *</label>
+                        <input type="text" class="form-input" placeholder="Ex: NF-2025-001234" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Fornecedor</label>
+                        <input type="text" class="form-input" placeholder="Nome do fornecedor">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Observações</label>
+                        <textarea class="form-textarea" placeholder="Observações adicionais..."></textarea>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">
+                            <span>✅</span>
+                            Registrar Entrada
+                        </button>
+                        <button type="reset" class="btn btn-secondary">
+                            <span>🔄</span>
+                            Limpar Formulário
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Histórico de Entradas Recentes -->
+            <section class="section">
+                <h3 class="section-title">Entradas Recentes</h3>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Produto</th>
+                                <th>Lote</th>
+                                <th>Quantidade</th>
+                                <th>Validade</th>
+                                <th>Nota Fiscal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20/01/2025 14:30</td>
+                                <td>Paracetamol 500mg</td>
+                                <td>#11111</td>
+                                <td>50</td>
+                                <td>15/06/2025</td>
+                                <td>NF-2025-001234</td>
+                            </tr>
+                            <tr>
+                                <td>19/01/2025 10:15</td>
+                                <td>Amoxicilina 500mg</td>
+                                <td>#12345</td>
+                                <td>100</td>
+                                <td>20/07/2025</td>
+                                <td>NF-2025-001200</td>
+                            </tr>
+                            <tr>
+                                <td>18/01/2025 16:45</td>
+                                <td>Ibuprofeno 400mg</td>
+                                <td>#67890</td>
+                                <td>75</td>
+                                <td>15/08/2025</td>
+                                <td>NF-2025-001180</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

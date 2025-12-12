@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUAP STOCK - Inventário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">FLUAP STOCK</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="estoque.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Estoque</span>
+                </a></li>
+                <li><a href="entrada.html" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    <span>Entrada</span>
+                </a></li>
+                <li><a href="saida.html" class="nav-item">
+                    <span class="nav-icon">➖</span>
+                    <span>Saída</span>
+                </a></li>
+                <li><a href="inventario.html" class="nav-item active">
+                    <span class="nav-icon">🔍</span>
+                    <span>Inventário</span>
+                </a></li>
+                <li><a href="movimentacoes.html" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    <span>Movimentações</span>
+                </a></li>
+                <li><a href="alertas.html" class="nav-item">
+                    <span class="nav-icon">⚠️</span>
+                    <span>Alertas</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h2>Inventário</h2>
+                <div class="header-actions">
+                    <button class="btn btn-primary">
+                        <span>➕</span>
+                        Novo Inventário
+                    </button>
+                </div>
+            </header>
+
+            <!-- Contagem -->
+            <section class="section">
+                <h3 class="section-title">Contagem de Estoque</h3>
+                <div class="inventory-list">
+                    <div class="inventory-item">
+                        <div class="inventory-product">
+                            <strong>Paracetamol 500mg - Lote #12345</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Estoque registrado: 25 unidades</span>
+                        </div>
+                        <div class="inventory-count">
+                            <label class="form-label" style="margin-bottom: 4px;">Quantidade Contada</label>
+                            <input type="number" class="form-input" value="25" min="0" style="width: 100px;">
+                        </div>
+                        <div class="inventory-status">
+                            <span class="badge badge-success">OK</span>
+                        </div>
+                    </div>
+
+                    <div class="inventory-item">
+                        <div class="inventory-product">
+                            <strong>Amoxicilina 500mg - Lote #12345</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Estoque registrado: 25 unidades</span>
+                        </div>
+                        <div class="inventory-count">
+                            <label class="form-label" style="margin-bottom: 4px;">Quantidade Contada</label>
+                            <input type="number" class="form-input" value="23" min="0" style="width: 100px;">
+                        </div>
+                        <div class="inventory-status">
+                            <span class="badge badge-warning">Divergência: -2</span>
+                        </div>
+                    </div>
+
+                    <div class="inventory-item">
+                        <div class="inventory-product">
+                            <strong>Ibuprofeno 400mg - Lote #67890</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Estoque registrado: 50 unidades</span>
+                        </div>
+                        <div class="inventory-count">
+                            <label class="form-label" style="margin-bottom: 4px;">Quantidade Contada</label>
+                            <input type="number" class="form-input" value="52" min="0" style="width: 100px;">
+                        </div>
+                        <div class="inventory-status">
+                            <span class="badge badge-warning">Divergência: +2</span>
+                        </div>
+                    </div>
+
+                    <div class="inventory-item">
+                        <div class="inventory-product">
+                            <strong>Dipirona 1g - Lote #11111</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Estoque registrado: 3 unidades</span>
+                        </div>
+                        <div class="inventory-count">
+                            <label class="form-label" style="margin-bottom: 4px;">Quantidade Contada</label>
+                            <input type="number" class="form-input" value="3" min="0" style="width: 100px;">
+                        </div>
+                        <div class="inventory-status">
+                            <span class="badge badge-success">OK</span>
+                        </div>
+                    </div>
+
+                    <div class="inventory-item">
+                        <div class="inventory-product">
+                            <strong>Omeprazol 20mg - Lote #22222</strong><br>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Estoque registrado: 120 unidades</span>
+                        </div>
+                        <div class="inventory-count">
+                            <label class="form-label" style="margin-bottom: 4px;">Quantidade Contada</label>
+                            <input type="number" class="form-input" value="118" min="0" style="width: 100px;">
+                        </div>
+                        <div class="inventory-status">
+                            <span class="badge badge-warning">Divergência: -2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group" style="margin-top: var(--spacing);">
+                    <button class="btn btn-primary">
+                        <span>💾</span>
+                        Salvar Contagem
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span>📊</span>
+                        Gerar Relatório
+                    </button>
+                </div>
+            </section>
+
+            <!-- Divergências -->
+            <section class="section">
+                <h3 class="section-title">Divergências Identificadas</h3>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Lote</th>
+                                <th>Estoque Registrado</th>
+                                <th>Quantidade Contada</th>
+                                <th>Divergência</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Amoxicilina 500mg</strong></td>
+                                <td>#12345</td>
+                                <td>25</td>
+                                <td>23</td>
+                                <td class="divergence">-2</td>
+                                <td><span class="badge badge-warning">Pendente</span></td>
+                                <td>
+                                    <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 14px;">Ajustar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ibuprofeno 400mg</strong></td>
+                                <td>#67890</td>
+                                <td>50</td>
+                                <td>52</td>
+                                <td class="divergence" style="color: var(--success-color);">+2</td>
+                                <td><span class="badge badge-warning">Pendente</span></td>
+                                <td>
+                                    <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 14px;">Ajustar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Omeprazol 20mg</strong></td>
+                                <td>#22222</td>
+                                <td>120</td>
+                                <td>118</td>
+                                <td class="divergence">-2</td>
+                                <td><span class="badge badge-warning">Pendente</span></td>
+                                <td>
+                                    <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 14px;">Ajustar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Ajustes -->
+            <section class="section">
+                <h3 class="section-title">Ajustes Realizados</h3>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Produto</th>
+                                <th>Lote</th>
+                                <th>Quantidade Anterior</th>
+                                <th>Quantidade Nova</th>
+                                <th>Responsável</th>
+                                <th>Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>19/01/2025 14:30</td>
+                                <td>Paracetamol 500mg</td>
+                                <td>#12345</td>
+                                <td>30</td>
+                                <td>25</td>
+                                <td>João Silva</td>
+                                <td>Divergência no inventário</td>
+                            </tr>
+                            <tr>
+                                <td>18/01/2025 10:15</td>
+                                <td>Amoxicilina 500mg</td>
+                                <td>#12345</td>
+                                <td>20</td>
+                                <td>25</td>
+                                <td>Maria Santos</td>
+                                <td>Correção de entrada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

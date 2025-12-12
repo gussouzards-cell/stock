@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUAP STOCK - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">FLUAP STOCK</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="estoque.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Estoque</span>
+                </a></li>
+                <li><a href="entrada.html" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    <span>Entrada</span>
+                </a></li>
+                <li><a href="saida.html" class="nav-item">
+                    <span class="nav-icon">➖</span>
+                    <span>Saída</span>
+                </a></li>
+                <li><a href="inventario.html" class="nav-item">
+                    <span class="nav-icon">🔍</span>
+                    <span>Inventário</span>
+                </a></li>
+                <li><a href="movimentacoes.html" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    <span>Movimentações</span>
+                </a></li>
+                <li><a href="alertas.html" class="nav-item">
+                    <span class="nav-icon">⚠️</span>
+                    <span>Alertas</span>
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <h2>Dashboard</h2>
+                <div class="header-actions">
+                    <span class="user-info">Usuário: Admin</span>
+                </div>
+            </header>
+
+            <!-- Cards de Indicadores -->
+            <div class="cards-grid">
+                <div class="stock-card critical">
+                    <div class="card-icon">🔴</div>
+                    <div class="card-content">
+                        <h3>Estoque Crítico</h3>
+                        <p class="card-value">12</p>
+                        <p class="card-label">produtos abaixo do mínimo</p>
+                    </div>
+                </div>
+
+                <div class="stock-card warning">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-content">
+                        <h3>Validades Curtas</h3>
+                        <p class="card-value">8</p>
+                        <p class="card-label">produtos com menos de 30 dias</p>
+                    </div>
+                </div>
+
+                <div class="stock-card alert">
+                    <div class="card-icon">📉</div>
+                    <div class="card-content">
+                        <h3>Rupturas Previstas</h3>
+                        <p class="card-value">5</p>
+                        <p class="card-label">produtos em risco</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Alertas Recentes -->
+            <section class="section">
+                <h3 class="section-title">Alertas Recentes</h3>
+                <div class="alerts-list">
+                    <div class="alert-badge critical">
+                        <div class="alert-content">
+                            <span class="alert-icon">🔴</span>
+                            <div class="alert-info">
+                                <strong>Paracetamol 500mg</strong>
+                                <span>Estoque abaixo do mínimo (5 unidades)</span>
+                            </div>
+                            <span class="alert-time">Há 2 horas</span>
+                        </div>
+                    </div>
+
+                    <div class="alert-badge warning">
+                        <div class="alert-content">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-info">
+                                <strong>Amoxicilina 500mg - Lote #12345</strong>
+                                <span>Vencimento em 15 dias</span>
+                            </div>
+                            <span class="alert-time">Há 5 horas</span>
+                        </div>
+                    </div>
+
+                    <div class="alert-badge warning">
+                        <div class="alert-content">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-info">
+                                <strong>Ibuprofeno 400mg - Lote #67890</strong>
+                                <span>Vencimento em 22 dias</span>
+                            </div>
+                            <span class="alert-time">Há 1 dia</span>
+                        </div>
+                    </div>
+
+                    <div class="alert-badge critical">
+                        <div class="alert-content">
+                            <span class="alert-icon">🔴</span>
+                            <div class="alert-info">
+                                <strong>Dipirona 1g</strong>
+                                <span>Ruptura prevista em 3 dias</span>
+                            </div>
+                            <span class="alert-time">Há 2 dias</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Movimentações Recentes -->
+            <section class="section">
+                <h3 class="section-title">Movimentações Recentes</h3>
+                <div class="movements-preview">
+                    <div class="movement-row">
+                        <span class="movement-type entrada">Entrada</span>
+                        <span class="movement-product">Paracetamol 500mg - Lote #11111</span>
+                        <span class="movement-quantity">+50 unidades</span>
+                        <span class="movement-time">Há 1 hora</span>
+                    </div>
+                    <div class="movement-row">
+                        <span class="movement-type saida">Saída</span>
+                        <span class="movement-product">Amoxicilina 500mg - Lote #12345</span>
+                        <span class="movement-quantity">-10 unidades</span>
+                        <span class="movement-time">Há 3 horas</span>
+                    </div>
+                    <div class="movement-row">
+                        <span class="movement-type ajuste">Ajuste</span>
+                        <span class="movement-product">Ibuprofeno 400mg - Lote #67890</span>
+                        <span class="movement-quantity">-2 unidades</span>
+                        <span class="movement-time">Há 1 dia</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
